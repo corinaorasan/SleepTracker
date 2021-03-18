@@ -16,6 +16,7 @@
 
 package com.example.android.trackmysleepquality.database
 
+import android.content.Context
 import androidx.room.Database
 import androidx.room.RoomDatabase
 
@@ -26,5 +27,13 @@ abstract class SleepDatabase: RoomDatabase() {
     companion object{
         @Volatile
         private var INSTANCE: SleepDatabase? = null
+
+        fun getInstance(context: Context): SleepDatabase{
+
+            synchronized(this){
+                var instance= INSTANCE
+                return instance
+            }
+        }
     }
 }
