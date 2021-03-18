@@ -16,6 +16,7 @@
 
 package com.example.android.trackmysleepquality.database
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
@@ -35,5 +36,8 @@ interface SleepDatabaseDao{
 
     @Query("DELETE FROM daily_sleep_quality_table")
     fun clear()
+
+    @Query("SELECT * FROM daily_sleep_quality_table ORDER BY nightId DESC")
+    fun getAllNights(): LiveData<List<SleepNight>>
 
 }
