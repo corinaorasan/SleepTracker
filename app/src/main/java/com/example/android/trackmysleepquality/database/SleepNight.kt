@@ -18,6 +18,7 @@ package com.example.android.trackmysleepquality.database
 
 import androidx.room.Entity
 
+@Entity(tableName = "daily_sleep_quality_table")
 data class SleepNight(
         var nightId: Long = 0L,
 
