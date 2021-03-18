@@ -16,4 +16,9 @@
 
 package com.example.android.trackmysleepquality.database
 
-interface SleepDatabaseDao
+import androidx.room.Dao
+
+@Dao
+interface SleepDatabaseDao{
+
+}
