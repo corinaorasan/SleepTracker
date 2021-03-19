@@ -27,11 +27,11 @@ abstract class SleepDatabase : RoomDatabase() {
     abstract val sleepDatabaseDao: SleepDatabaseDao
 
     companion object {
+
         @Volatile
         private var INSTANCE: SleepDatabase? = null
 
         fun getInstance(context: Context): SleepDatabase {
-
             synchronized(this) {
                 var instance = INSTANCE
 
