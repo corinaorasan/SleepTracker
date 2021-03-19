@@ -43,6 +43,7 @@ abstract class SleepDatabase : RoomDatabase() {
                     )
                             .fallbackToDestructiveMigration()
                             .build()
+                    INSTANCE = instance
                 }
                 return instance
             }
