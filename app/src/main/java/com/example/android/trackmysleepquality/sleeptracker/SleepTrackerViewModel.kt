@@ -29,7 +29,11 @@ class SleepTrackerViewModel(
         val database: SleepDatabaseDao,
         application: Application) : AndroidViewModel(application) {
 
-        private var viewModelJob = Job()
+    private var viewModelJob = Job()
 
+    override fun onCleared() {
+        super.onCleared()
+        viewModelJob.cancel()
+    }
 }
 
