@@ -69,6 +69,12 @@ class SleepTrackerViewModel(
         }
     }
 
+    private suspend fun insert(night: SleepNight){
+        withContext(Dispatchers.IO) {
+            database.insert(night)
+        }
+    }
+
     override fun onCleared() {
         super.onCleared()
         viewModelJob.cancel()
