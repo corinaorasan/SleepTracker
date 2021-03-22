@@ -20,6 +20,8 @@ import android.app.Application
 import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.AndroidViewModel
 import com.example.android.trackmysleepquality.database.SleepDatabaseDao
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 
 /**
@@ -30,6 +32,8 @@ class SleepTrackerViewModel(
         application: Application) : AndroidViewModel(application) {
 
     private var viewModelJob = Job()
+
+    private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
 
     override fun onCleared() {
         super.onCleared()
