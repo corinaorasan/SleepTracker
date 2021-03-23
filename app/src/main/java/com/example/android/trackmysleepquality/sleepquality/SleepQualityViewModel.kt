@@ -29,4 +29,10 @@ class SleepQualityViewModel(private val sleepNightKey: Long = 0L,
 
     private val viewModelJob = Job()
     private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
+
+    override fun onCleared() {
+        super.onCleared()
+
+        viewModelJob.cancel()
+    }
 }
