@@ -52,6 +52,8 @@ class SleepQualityFragment : Fragment() {
 
         val dataSource = SleepDatabase.getInstance(application).sleepDatabaseDao
 
+        val viewModelFactory = arguments?.let { SleepQualityViewModelFactory(it.sleepNightKey, dataSource) }
+
         return binding.root
     }
 }
