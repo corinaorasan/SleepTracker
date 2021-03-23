@@ -22,9 +22,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProviders
 import com.example.android.trackmysleepquality.R
 import com.example.android.trackmysleepquality.database.SleepDatabase
 import com.example.android.trackmysleepquality.databinding.FragmentSleepQualityBinding
+import com.example.android.trackmysleepquality.sleeptracker.SleepTrackerViewModel
+import com.example.android.trackmysleepquality.sleeptracker.SleepTrackerViewModelFactory
 
 /**
  * Fragment that displays a list of clickable icons,
@@ -52,8 +56,12 @@ class SleepQualityFragment : Fragment() {
 
         val dataSource = SleepDatabase.getInstance(application).sleepDatabaseDao
 
-        val viewModelFactory = arguments?.let { SleepQualityViewModelFactory(it.sleepNightKey, dataSource) }
+        val viewModelFactory = SleepQualityViewModelFactory(arguments!!.sleepNightKey, dataSource)
 
+        val sleepQualityViewModel =
+                ViewModelProvider(
+                        this, viewModelFactory).get(SleepQualityViewModel::class.java)
+        
         return binding.root
     }
 }
