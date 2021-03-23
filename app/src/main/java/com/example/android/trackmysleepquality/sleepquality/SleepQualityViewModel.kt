@@ -18,9 +18,11 @@ package com.example.android.trackmysleepquality.sleepquality
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.ViewModel
 import com.example.android.trackmysleepquality.database.SleepDatabaseDao
+import kotlinx.coroutines.Job
 
-class SleepTrackerViewModel(
-        val database: SleepDatabaseDao,
-        application: Application) : AndroidViewModel(application) {
+class SleepQualityViewModel(private val sleepNightKey: Long = 0L,
+                            val database: SleepDatabaseDao) : ViewModel() {
+
 }
