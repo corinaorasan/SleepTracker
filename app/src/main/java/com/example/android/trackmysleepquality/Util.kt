@@ -101,5 +101,6 @@ fun formatNights(nights: List<SleepNight>, resources: Resources): Spanned {
         return Html.fromHtml(sb.toString(), Html.FROM_HTML_MODE_LEGACY)
     } else {
         return HtmlCompat.fromHtml(sb.toString(), HtmlCompat.FROM_HTML_MODE_LEGACY)
-    }}
+    }
+}
 
