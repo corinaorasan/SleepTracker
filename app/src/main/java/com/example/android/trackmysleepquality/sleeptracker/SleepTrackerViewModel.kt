@@ -63,6 +63,10 @@ class SleepTrackerViewModel(
     val showSnackBarEvent: LiveData<Boolean>
         get() = _showSnackbarEvent
 
+    fun doneShowingSnackbar() {
+        _showSnackbarEvent.value = false
+    }
+
     init {
         initializeTonight()
     }
