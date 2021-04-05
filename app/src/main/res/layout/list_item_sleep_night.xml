@@ -12,6 +12,7 @@ android:orientation="vertical">
     android:layout_marginStart="16dp"
     android:layout_marginTop="8dp"
     android:layout_marginBottom="8dp"
+    android:contentDescription="@string/quality_5"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
@@ -27,7 +28,7 @@ android:orientation="vertical">
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toEndOf="@+id/quality_image"
     app:layout_constraintTop_toTopOf="@+id/quality_image"
-    tools:text="@string/sleep_length_preview" />
+    tools:text="@string/sleep_length_placeholder" />
 
 <TextView
     android:id="@+id/quality_string"
@@ -37,5 +38,5 @@ android:orientation="vertical">
     app:layout_constraintEnd_toEndOf="@+id/sleep_length"
     app:layout_constraintStart_toStartOf="@+id/sleep_length"
     app:layout_constraintTop_toBottomOf="@+id/sleep_length"
-    tools:text="@string/sleep_quality_string_text_preview" />
+    tools:text="@string/five_excellent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
