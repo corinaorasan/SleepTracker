@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="sleep" type="com.example.android.trackmysleepquality.database.SleepNight" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
