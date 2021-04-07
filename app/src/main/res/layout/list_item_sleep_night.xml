@@ -22,10 +22,10 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:contentDescription="@string/quality_5"
-            app:SleepImage="@{sleep}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:sleepImage="@{sleep}"
             tools:srcCompat="@drawable/ic_sleep_5" />
 
         <TextView
@@ -49,7 +49,7 @@
             app:layout_constraintEnd_toEndOf="@+id/sleep_length"
             app:layout_constraintStart_toStartOf="@+id/sleep_length"
             app:layout_constraintTop_toBottomOf="@+id/sleep_length"
-            app:sleepQuality="@{sleep}"
+            app:sleepQualityString="@{sleep}"
             tools:text="@string/five_excellent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
